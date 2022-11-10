@@ -1,6 +1,8 @@
 window.addEventListener('load', (event) => {
 
-    const cards = document.getElementById('card')
+    const cards = document.getElementById('card');
+    const filterBtns = document.querySelectorAll('.category');
+
     axios({
         method: 'get',
         url: 'http://www.filltext.com/?rows=10&fname={firstName}&lname={lastName}&category=[%22category1%22,%22category2%22,%22category3%22]&pretty=true',
@@ -28,6 +30,7 @@ window.addEventListener('load', (event) => {
             const category = document.createElement('div');
             category.classList.add('card-category')
             const categoryName = document.createElement('h3');
+            categoryName.classList.add('category-content')
 
 
             cards.appendChild(card);
@@ -56,7 +59,26 @@ window.addEventListener('load', (event) => {
             lnameInitial.innerHTML = data[i].lname[0];
 
         }
+
+        filterBtns.forEach(function (btn) {
+            btn.addEventListener('click', function (e) {
+                let filter = e.currentTarget.dataset.id;
+                const newCard = document.querySelectorAll('.card');
+                const categoryName = document.querySelectorAll('.category-content');
+                let divLen = newCard.length
+                for (i = 0; i < divLen; i++) {
+                    newCard[i].style.display = 'none'
+                    if (categoryName[i].innerHTML == filter) {
+                        newCard[i].style.display = 'flex'
+                    }
+                }
+
+            })
+        })
     })
+
+
+    //add event listener
 
 
 
