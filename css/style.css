@@ -52,6 +52,8 @@ main {
 
 .header {
   text-align: center;
+  color: rgb(33, 33, 68);
+  padding-top: 20px;
 }
 .cards {
   padding-top: 5px;
@@ -106,4 +108,5 @@ main {
   color: white;
   margin-right: 6px;
   cursor: pointer;
+  border: none;
 }
