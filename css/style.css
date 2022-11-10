@@ -15,7 +15,7 @@ main {
 .test {
   background: white;
   min-height: 80vh;
-  width: 60%;
+  width: 800px;
   background: linear-gradient(
     to right bottom,
     rgba(255, 255, 255, 0.7),
@@ -71,6 +71,7 @@ main {
   color: rgb(35, 122, 194);
   align-items: center;
   justify-content: center;
+  width: 600px;
 }
 .card-info {
   display: flex;
