@@ -1,16 +1,16 @@
 window.addEventListener('load', (event) => {
 
     const cards = document.getElementById('card')
-    let data = new FormData();
     axios({
         method: 'get',
         url: 'http://www.filltext.com/?rows=10&fname={firstName}&lname={lastName}&category=[%22category1%22,%22category2%22,%22category3%22]&pretty=true',
-        data: data,
     }).then(function (res) {
         data = res.data;
         len = data.length
         for (i = 0; i < len; i++) {
-            console.log(data[i])
+
+            const categories = document.createElement('div');
+            categories.classList.add("categories");
 
             const card = document.createElement('div');
             card.classList.add("card");
@@ -29,7 +29,9 @@ window.addEventListener('load', (event) => {
             category.classList.add('card-category')
             const categoryName = document.createElement('h3');
 
+
             cards.appendChild(card);
+
 
             card.appendChild(initials);
             card.appendChild(cardInfo);
@@ -43,6 +45,9 @@ window.addEventListener('load', (event) => {
             cardInfo.appendChild(lname);
 
             category.appendChild(categoryName);
+
+
+
 
             categoryName.innerHTML = data[i].category;
             fname.innerHTML = `${data[i].fname}&nbsp`;
