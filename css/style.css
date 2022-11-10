@@ -54,7 +54,7 @@ main {
   text-align: center;
 }
 .cards {
-  padding-top: 70px;
+  padding-top: 5px;
   display: flex;
   flex-direction: column;
 }
@@ -93,4 +93,15 @@ main {
   border-radius: 50%;
   justify-content: center;
   color: white;
+}
+.categories {
+  padding-top: 60px;
+  display: flex;
+}
+.category {
+  background-color: rgb(22, 185, 197);
+  padding: 8px;
+  border-radius: 20px;
+  color: white;
+  margin-right: 6px;
 }
